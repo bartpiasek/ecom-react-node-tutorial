@@ -35,6 +35,16 @@ footer {
     background-color: whitesmoke;
     color:black
 }
+h3 {
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    text-decoration: none;
+}
+h2 {
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    text-decoration: none;
+}
 
 a {
     text-decoration: none;
@@ -61,4 +71,36 @@ a.brand {
 
 .row.center {
     justify-content: center;
+}
+
+img {
+    border-radius: 0.5rem;
+}
+img.medium {
+    max-width: 290rem;
+    width: 100%;
+}
+
+.card {
+    border: 0.1rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    margin: 1rem;
+    
+}
+.card-body {
+    padding: 1rem;
+    
+}
+.card-body > * {
+    margin-bottom: 0.5rem;
+}
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.rating span {
+    color: pink;
+    margin: 0.1rem;
 }
