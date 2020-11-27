@@ -1,4 +1,5 @@
-
+import React from 'react';
+import data from './data';
 
 function App() {
   return (
@@ -14,10 +15,11 @@ function App() {
         </header>
         <main>
             <div className="row center">
-                <div className="card">
-                    <a href="product.html"><img className="medium" src="/template/images/prod-1.png" alt="product" /></a>
+              {data.products.map((product) => {
+                  <div key={product._id} className="card">
+                    <a href={`/product/${product._id}`}><img className="medium" src={product.image} alt={product.name} /></a>
                     <div className="card-body">
-                        <a href="product.html"><h3>Foodhunterki ebook</h3></a>
+                        <a href={`/product/${product._id}`}><h3>{product.name}</h3></a>
                         <div className="rating">
                             <span><i className="fa fa-star"></i></span>
                             <span><i className="fa fa-star"></i></span>
@@ -25,43 +27,12 @@ function App() {
                             <span><i className="fa fa-star"></i></span>
                             <span><i className="fa fa-star"></i></span>
                         </div>
-                        <div className="price">
-                            120 PLN
-                        </div>
+                        <div className="price">${product.price}</div>
                     </div>
-                </div>
-                <div className="card">
-                    <a href="product.html"><img className="medium" src="/template/images/prod-3.png" alt="product" /></a>
-                    <div className="card-body">
-                        <a href="product.html"><h3>Foodhunterki ebook</h3></a>
-                        <div className="rating">
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                        </div>
-                        <div className="price">
-                            150 PLN
-                        </div>
-                    </div>
-                </div>
-                <div className="card">
-                    <a href="product.html"><img className="medium" src="/template/images/prod-2.png" alt="product" /></a>
-                    <div className="card-body">
-                        <a href="product.html"><h3>Foodhunterki ebook</h3></a>
-                        <div className="rating">
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                            <span><i className="fa fa-star"></i></span>
-                        </div>
-                        <div className="price">
-                            170 PLN
-                        </div>
-                    </div>
-                </div>
+                  </div>
+                })
+              }
+                
             </div>
         </main>
         <footer className="row center">
