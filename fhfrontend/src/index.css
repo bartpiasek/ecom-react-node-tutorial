@@ -56,6 +56,16 @@ a {
 a:hover {
     color: pink;
 }
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+li {
+    margin-top: 1rem;
+}
+
 header a{
     color: pink;
     padding: 1rem;
@@ -75,6 +85,17 @@ a.brand {
 
 .row.center {
     justify-content: center;
+}
+
+.row.top {
+    align-items: flex-start;
+}
+
+.col-1 {
+    flex: 1 1 25rem;
+}
+.col-2 {
+    flex: 2 1 50rem;
 }
 
 img {

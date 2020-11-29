@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Rating from '../components/Rating';
 import data from '../data';
 
@@ -9,7 +10,8 @@ export default function ProductScreen(props) {
     }
     return (
         <div>
-            <div className="row">
+            <Link to="/">Continue shopping</Link>
+            <div className="row top">
                 <div className="col-2">
                     <img className="large" src={product.image} alt={product.name}></img>
                 </div>
