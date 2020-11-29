@@ -5,7 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"nodeman --watch backend --exec node --experimental-modules fhbackend/server.js"
+    "start": "nodeman --watch backend --exec node --experimental-modules fhbackend/server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bartpiasek/ecom-react-node-tutorial.git"
