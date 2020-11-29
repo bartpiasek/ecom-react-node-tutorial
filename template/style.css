@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 html {
     font-size: 60%;
@@ -9,7 +8,7 @@ body {
     margin: 2%;
     height: 100vh;
     font-size: 1.6rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .grid-container {
