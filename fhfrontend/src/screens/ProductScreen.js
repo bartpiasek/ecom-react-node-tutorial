@@ -6,11 +6,11 @@ import data from '../data';
 export default function ProductScreen(props) {
     const product = data.products.find(x => x._id === props.match.params.id);
     if (!product) {
-        return <div>Product not found</div>;
+        return <div>Nie znaleziono produktu!</div>;
     }
     return (
         <div>
-            <Link to="/">Continue shopping</Link>
+            <Link to="/">Wróć do zakupów</Link>
             <div className="row top">
                 <div className="col-2">
                     <img className="large" src={product.image} alt={product.name}></img>
@@ -27,10 +27,7 @@ export default function ProductScreen(props) {
                             ></Rating>
                         </li>
                         <li>
-                            Price: PLN {product.price}
-                        </li>
-                        <li>
-                            Description: 
+                            Opis: 
                             <p>{product.descriptions}</p>
                         </li>
                     </ul>
@@ -40,7 +37,7 @@ export default function ProductScreen(props) {
                         <ul>
                             <li>
                                 <div className="row">
-                                    <div>Price</div>
+                                    <div>Cena</div>
                                     <div className="price">
                                         PLN {product.price}
                                     </div>
@@ -48,7 +45,7 @@ export default function ProductScreen(props) {
                             </li>
                             <li>
                                 <div className="row">
-                                    <div>Status</div>
+                                    <div>Dostępność</div>
                                     <div>
                                         {product.countInStock > 0 
                                         ? (<span className="success">In stock</span>)
@@ -58,7 +55,7 @@ export default function ProductScreen(props) {
                                 </div>
                             </li>
                             <li>
-                                <button className="primary block">Add to cart</button>
+                                <button id="cart" className="primary block">Dodaj do koszyka</button>
                             </li>
                         </ul>
                     </div>
@@ -68,3 +65,4 @@ export default function ProductScreen(props) {
         </div>
     );
 }
+

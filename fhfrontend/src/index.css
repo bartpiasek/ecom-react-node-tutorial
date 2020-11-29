@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 
 html {
     font-size: 60%;
@@ -8,7 +9,7 @@ body {
     margin: 2%;
     height: 100vh;
     font-size: 1.6rem;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -66,6 +67,30 @@ li {
     margin-top: 1rem;
 }
 
+button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: whitesmoke;
+    border-color: transparent;
+    font-size: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    cursor: pointer;
+}
+button.primary {
+    background-color: whitesmoke;
+}
+button.block{
+    width: 100%;
+}
+button:hover {
+    border-color: pink;
+    border-width: 0.1px;
+    /* background-color: pink; */
+}
+
+
 header a{
     color: pink;
     padding: 1rem;
@@ -92,10 +117,10 @@ a.brand {
 }
 
 .col-1 {
-    flex: 1 1 25rem;
+    flex: 1 1 20rem;
 }
 .col-2 {
-    flex: 2 1 50rem;
+    flex: 2 1 20rem;
 }
 
 img {
@@ -103,7 +128,11 @@ img {
 }
 img.medium {
     max-width: 290rem;
-    width: 100%;
+    width: 80%;
+}
+img.large {
+    width: 80%;
+    align-self: center;
 }
 
 .card {
@@ -131,4 +160,11 @@ img.medium {
 }
 .rating span:last-child {
     color: black;
+}
+
+.success {
+    color: black;
+}
+.error {
+    color: grey;
 }
