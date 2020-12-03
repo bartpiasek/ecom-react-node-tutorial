@@ -1,11 +1,12 @@
-import data from './data';
-import {applyMiddleware, compose, createStore} from 'redux';
+import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import thunk from 'redux-thunk';
+import {productListReducer} from './reducers/productReducers';
 // REDUX - initial state
 const initialState = {};
-const reducer = (state, action) => {
-    return { products: data.products };
-};
+// combinereducer to load data from backend (without using static frontend data)
+const reducer = combineReducers({
+    productList: productListReducer,
+});
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
