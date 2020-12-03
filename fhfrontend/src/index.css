@@ -165,7 +165,7 @@ img.large {
 .success {
     color: black;
 }
-.error {
+.danger {
     color: grey;
 }
 .alert {
