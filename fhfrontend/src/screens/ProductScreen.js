@@ -1,14 +1,32 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { detailsProduct } from '../actions/productActions';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
-import data from '../data';
+
 
 export default function ProductScreen(props) {
-    const product = data.products.find(x => x._id === props.match.params.id);
-    if (!product) {
-        return <div>Nie znaleziono produktu!</div>;
-    }
+    const dispatch = useDispatch();
+    const productId = props.match.params.id;
+    // const product = data.products.find(x => x._id === props.match.params.id);
+    // product from productdetails redux
+    const productDetails = useSelector((state) => state.productDetails);
+    const { loading, error, product } = productDetails;
+    // if (!product) {
+    //     return <div>Nie znaleziono produktu!</div>;
+    // }
+    useEffect(() => {
+        dispatchEvent(detailsProduct(productId));
+    }, [dispatch, productId]);
+
     return (
+        <div>
+        {loading ? (<LoadingBox></LoadingBox>)
+        :
+        error ? (<MessageBox variant="danger">{error}</MessageBox>)
+        : (
         <div>
             <Link to="/">Wróć do zakupów</Link>
             <div className="row top">
@@ -63,6 +81,10 @@ export default function ProductScreen(props) {
             </div>
             <hr></hr>
         </div>
+        )}
+        </div>     
+
+        
     );
 }
 
