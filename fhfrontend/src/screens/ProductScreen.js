@@ -18,7 +18,7 @@ export default function ProductScreen(props) {
     //     return <div>Nie znaleziono produktu!</div>;
     // }
     useEffect(() => {
-        dispatchEvent(detailsProduct(productId));
+        dispatch(detailsProduct(productId));
     }, [dispatch, productId]);
 
     return (
