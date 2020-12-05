@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
+
 import Product from '../components/Product';
 import MessageBox from '../components/MessageBox';
 import LoadingBox from '../components/LoadingBox';
-import {useDispatch, useSelector} from 'react-redux';
-import {listProducts} from '../actions/productActions';
+
+import { useDispatch, useSelector } from 'react-redux';
+import { listProducts } from '../actions/productActions';
 
 export default function HomeScreen() {
   // HOOK - default value is empty array
@@ -15,7 +17,7 @@ export default function HomeScreen() {
   // REDUX
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
-  const {loading, error, products} = productList;
+  const { loading, error, products } = productList;
 
   useEffect(() => {
     //fetch products from backend
@@ -37,16 +39,16 @@ export default function HomeScreen() {
 
     return (
       <div>
-        {loading ? (<LoadingBox></LoadingBox>)
-        :
-        error ? (<MessageBox variant="danger">{error}</MessageBox>)
-        : (
+        {loading ? (
+          <LoadingBox></LoadingBox>
+        ) : error ? (
+          <MessageBox variant="danger">{error}</MessageBox>
+        ) : (
           <div className="row center">
-              {products.map((product) => (
-                <Product key={product._id} product={product}></Product> 
-              ))}  
+            {products.map((product) => (
+              <Product key={product._id} product={product}></Product> 
+            ))}  
           </div>
-        
         )}
       </div>       
     );
