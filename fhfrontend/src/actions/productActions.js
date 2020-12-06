@@ -1,5 +1,6 @@
 import Axios from 'axios';
-import { PRODUCT_DETAILS_FAIL, 
+import { 
+    PRODUCT_DETAILS_FAIL, 
     PRODUCT_DETAILS_REQUEST, 
     PRODUCT_DETAILS_SUCCESS, 
     PRODUCT_LIST_FAIL, 
@@ -9,9 +10,7 @@ import { PRODUCT_DETAILS_FAIL,
 
 // REDUX ACTION
 export const listProducts = () => async (dispatch) => {
-    dispatch({
-        type: PRODUCT_LIST_REQUEST,
-    });
+    dispatch({ type: PRODUCT_LIST_REQUEST });
     // take data from backend
     try {
         const { data } = await Axios.get('/api/products');
