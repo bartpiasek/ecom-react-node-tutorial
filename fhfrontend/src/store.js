@@ -2,8 +2,15 @@ import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import thunk from 'redux-thunk';
 import { cartReducer } from './reducers/cartReducers';
 import {productDetailsReducer, productListReducer} from './reducers/productReducers';
-// REDUX - initial state
-const initialState = {};
+// REDUX - initial state, load cart from local storage or create empty array
+const initialState = {
+    cart: {
+        cartItems: localStorage.getItem('cartItems')
+        ? JSON.parse(localStorage.getItem('cartItems'))
+        : [],
+    },
+};
+
 // combinereducer to load data from backend (without using static frontend data)
 const reducer = combineReducers({
     productList: productListReducer,
