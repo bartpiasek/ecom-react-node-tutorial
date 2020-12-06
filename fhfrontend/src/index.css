@@ -67,23 +67,35 @@ li {
     margin-top: 1rem;
 }
 
+input, select, textarea,
 button {
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: whitesmoke;
-    border-color: transparent;
+    
+    border-width: 0.1px;
     font-size: 1.6rem;
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
+}
+
+button {
+    background-color: whitesmoke;
     cursor: pointer;
 }
+
 button.primary {
-    background-color: whitesmoke;
+    background-color: transparent;
 }
+
 button.block{
     width: 100%;
 }
+
+input:hover, 
+select:hover, 
+textarea:hover,
 button:hover {
     border-color: pink;
     border-width: 0.1px;
