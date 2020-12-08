@@ -13,6 +13,7 @@ export default function CartScreen(props) {
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart;
     const dispatch = useDispatch();
+    
     useEffect(() => {
         if (productId) {
             dispatch(addToCart(productId, qty));
