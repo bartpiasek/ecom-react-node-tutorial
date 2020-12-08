@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { addToCart } from '../actions/cartAction';
+import { addToCart, removeFromCart } from '../actions/cartAction';
 import { useDispatch, useSelector } from 'react-redux';
 import MessageBox from '../components/MessageBox';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,7 @@ export default function CartScreen(props) {
     const cart = useSelector(state => state.cart);
     const { cartItems } = cart;
     const dispatch = useDispatch();
-    
+
     useEffect(() => {
         if (productId) {
             dispatch(addToCart(productId, qty));
@@ -22,7 +22,7 @@ export default function CartScreen(props) {
 
     const removeFromCartHandler = (id) => {
         // delete action
-        
+        dispatch(removeFromCart(id));
     };
 
     const checkoutHandler = () => {
