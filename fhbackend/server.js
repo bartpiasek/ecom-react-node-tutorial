@@ -1,7 +1,14 @@
 import express from 'express';
+import mongoose from 'mongoose';
+import userRouter from './server';
 import data from './data.js';
 
 const app = express();
+mongoose.connect('mongodb://localhost/foodhunterki', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+});
 
 app.get('/api/products/:id', (req, res) => {
     const product = data.products.find((x) => x._id === req.params.id);
@@ -15,6 +22,8 @@ app.get('/api/products/:id', (req, res) => {
 app.get('/api/products', (req, res) => {
     res.send(data.products);
 });
+//mongodb
+app.use('/api/users', userRouter);
 
 app.get('/', (req, res) => {
     res.send('server is ready');
