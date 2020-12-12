@@ -27,7 +27,7 @@ const data = {
             brand:'Foodhunterki',
             rating: 4.5,
             numReviews:10,
-            descriptions:'Foodhunterki ebook nr1'
+            description:'Foodhunterki ebook nr1'
         },
         {
             name:'Foodhunterki ebook 2',
@@ -38,7 +38,7 @@ const data = {
             brand:'Foodhunterki',
             rating: 5,
             numReviews:20,
-            descriptions:'Foodhunterki ebook nr2'
+            description:'Foodhunterki ebook nr2'
         },
         {
             name:'Foodhunterki ebook 3',
@@ -49,7 +49,7 @@ const data = {
             brand:'Foodhunterki',
             rating: 4,
             numReviews:50,
-            descriptions:'Foodhunterki ebook nr3'
+            description:'Foodhunterki ebook nr3'
         },
         {
             name:'Szkolenie Social Media',
@@ -60,7 +60,7 @@ const data = {
             countInStock: 0,
             rating: 4,
             numReviews:100,
-            descriptions:'Foodhunterki szkolenie SM'
+            description:'Foodhunterki szkolenie SM'
         },
     ],
 };
