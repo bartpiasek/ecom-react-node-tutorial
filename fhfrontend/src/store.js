@@ -5,6 +5,11 @@ import {productDetailsReducer, productListReducer} from './reducers/productReduc
 import { userSigninReducer } from './reducers/userReducers';
 // REDUX - initial state, load cart from local storage or create empty array
 const initialState = {
+    userSignin: {
+        userInfo: localStorage.getItem('userInfo')
+        ? JSON.parse(localStorage.getItem('userInfo'))
+        : null,
+    },
     cart: {
         cartItems: localStorage.getItem('cartItems')
         ? JSON.parse(localStorage.getItem('cartItems'))
