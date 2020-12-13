@@ -17,3 +17,10 @@ export const signin = (email, password) => async(dispatch) => {
     });
     }
 };
+
+export const signout = () => (dispatch) => {
+    //remove userInfo, and cartItems from localstorage
+    localStorage.removeItem('userInfo');
+    localStorage.removeItem('cartItems');
+    dispatch({type: USER_SIGNIN_SIGNOUT });
+};
