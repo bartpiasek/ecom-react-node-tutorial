@@ -1,6 +1,5 @@
 import express from 'express';
 import expressAsyncHandler from 'express-async-handler';
-import { PromiseProvider } from 'mongoose';
 import data from '../data.js';
 import Product from '../models/productModel.js';
 
