@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { signin } from '../actions/userAction.js';
 
-export default function SigninScreen(props) {
+import LoadingBox from '../components/LoadingBox.js';
+import MessageBox from '../components/MessageBox';
 
+
+export default function SigninScreen(props) {
     //hook
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState(''); 
@@ -15,7 +18,7 @@ export default function SigninScreen(props) {
 
     // copying from App.js
     const userSignin = useSelector((state) => state.userSignin);
-    const { userInfo } = userSignin;
+    const { userInfo, loading, error } = userSignin;
 
     const dispatch = useDispatch();
     const submitHandler = (e) => {
@@ -37,6 +40,8 @@ export default function SigninScreen(props) {
                 <div>
                     <h1>Zaloguj się</h1>
                 </div>
+                {loading && <LoadingBox></LoadingBox>}
+                {error && <MessageBox variant="danger">{error}</MessageBox>}
                 <div>
                     <label htmlFor="email">Email address</label>
                     <input 
@@ -64,7 +69,7 @@ export default function SigninScreen(props) {
                 <div>
                     <label></label>
                     <div>
-                        Nie masz konta? {' '}
+                        Nie masz konta?
                         <Link to="/register">Utwórz konto</Link> 
                     </div>
                 </div>    

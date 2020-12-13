@@ -1,8 +1,9 @@
-import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 import { cartReducer } from './reducers/cartReducers';
-import {productDetailsReducer, productListReducer} from './reducers/productReducers';
+import { productDetailsReducer, productListReducer } from './reducers/productReducers';
 import { userSigninReducer } from './reducers/userReducers';
+
 // REDUX - initial state, load cart from local storage or create empty array
 const initialState = {
     userSignin: {

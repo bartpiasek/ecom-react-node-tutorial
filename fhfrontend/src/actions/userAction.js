@@ -1,11 +1,16 @@
 import Axios from "axios";
-import { USER_SIGNIN_FAIL, USER_SIGNIN_REQUEST, USER_SIGNIN_SIGNOUT, USER_SIGNIN_SUCCESS } from "../constants/userConstant"
+import { 
+    USER_SIGNIN_FAIL, 
+    USER_SIGNIN_REQUEST, 
+    USER_SIGNIN_SIGNOUT, 
+    USER_SIGNIN_SUCCESS 
+} from "../constants/userConstant";
 
-export const signin = (email, password) => async(dispatch) => {
+export const signin = (email, password) => async (dispatch) => {
     dispatch({type: USER_SIGNIN_REQUEST, payload: {email, password}});
     try {
-        const {data} = await Axios.post('/api/users/signin', {email, password});
-        dispatch({type: USER_SIGNIN_SUCCESS, paload: data});
+        const { data } = await Axios.post('/api/users/signin', {email, password});
+        dispatch({type: USER_SIGNIN_SUCCESS, payload: data});
         localStorage.setItem("userInfo", JSON.stringify(data));
     } catch(error) {
         dispatch({
@@ -22,5 +27,5 @@ export const signout = () => (dispatch) => {
     //remove userInfo, and cartItems from localstorage
     localStorage.removeItem('userInfo');
     localStorage.removeItem('cartItems');
-    dispatch({type: USER_SIGNIN_SIGNOUT });
+    dispatch({ type: USER_SIGNIN_SIGNOUT });
 };
