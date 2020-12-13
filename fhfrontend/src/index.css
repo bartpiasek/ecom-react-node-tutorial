@@ -186,6 +186,9 @@ img.small {
   color: black;
 }
 
+.loading {
+  display: block !important;
+}
 .success {
   color: black;
 }
