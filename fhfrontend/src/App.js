@@ -5,6 +5,7 @@ import { signout } from './actions/userAction.js';
 import CartScreen from './screens/cartScreen.js';
 import HomeScreen from './screens/HomeScreen.js';
 import PaymentMethodScreen from './screens/paymentMethodScreen.js';
+import PlaceOrderScreen from './screens/placeOrderScreen.js';
 import ProductScreen from './screens/ProductScreen.js';
 import registerScreen from './screens/registerScreen.js';
 import ShippingAddressScreen from './screens/shippingAddressScreen.js';
@@ -20,8 +21,8 @@ function App() {
   const dispatch = useDispatch();
   const signoutHandler = () => {
     dispatch(signout());
-  };
-
+  }
+  
   return (
     <BrowserRouter>
       <div className="grid-container">
@@ -65,6 +66,8 @@ function App() {
           <Route path="/signin" component={SigninScreen}></Route>
           <Route path="/shipping" component={ShippingAddressScreen}></Route>
           <Route path="/payment" component={PaymentMethodScreen}></Route>
+          <Route path="/placeorder" component={PlaceOrderScreen}></Route>
+
           <Route path="/" component={HomeScreen}></Route>
         </main>
         <footer className="row center">All right reserved</footer>
