@@ -238,3 +238,15 @@ img.small {
 .droptown:hover .droptown-content {
   display: block;
 }
+
+.checkout-steps > div {
+  border-top: 0.3rem grey solid;
+  color: whitesmoke;
+  flex: 1;
+  padding: 1rem;
+  font-weight: bold;
+}
+.checkout-steps > div.active {
+  border-top-color: pink;
+  color: pink;
+}
