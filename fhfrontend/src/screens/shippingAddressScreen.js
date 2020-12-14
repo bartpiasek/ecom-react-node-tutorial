@@ -1,21 +1,30 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cartAction';
 import CheckoutStep from '../components/CheckoutStep';
 
-export default function ShippingAddressScreen() {
+export default function ShippingAddressScreen(props) {
 
-    const [fullName, setFullName] = useState('');
-    const [address, setAddress] = useState('');
-    const [city, setCity] = useState('');
-    const [postalCode, setPostalCode] = useState('');
-    const [country, setCountry] = useState('');
+    const userSignin = useSelector(state => state.userSignin);
+    const { userInfo } = userSignin;
+    const cart = useSelector(state => state.cart);
+    const { shippingAddress } = cart;
+    if (!userInfo) {
+        props.history.push('/signin');
+
+    }
+    const [fullName, setFullName] = useState(shippingAddress.fullName);
+    const [address, setAddress] = useState(shippingAddress.address);
+    const [city, setCity] = useState(shippingAddress.city);
+    const [postalCode, setPostalCode] = useState(shippingAddress.postalCode);
+    const [country, setCountry] = useState(shippingAddress.country);
     const dispatch = useDispatch();
 
     const submitHandler = (e) => {
         e.preventDefault();
         dispatch(saveShippingAddress({fullName, address, city, postalCode, country}));
     };
+    props.history.push('/payment');
 
     return (
         <div>

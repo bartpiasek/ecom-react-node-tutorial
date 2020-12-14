@@ -7,7 +7,7 @@ import LoadingBox from '../components/LoadingBox.js';
 import MessageBox from '../components/MessageBox';
 
 
-export default function registerScreen(props) {
+export default function RegisterScreen(props) {
     //hook
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
