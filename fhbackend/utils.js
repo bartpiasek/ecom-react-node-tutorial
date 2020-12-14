@@ -23,13 +23,13 @@ export const isAuth = (req, res, next) => {
         //callback func
         (err, decode) => {
             if(err) {
-                req.status(401).send({ message: 'invalid token' });
+                res.status(401).send({ message: 'invalid token' });
             } else {
                 req.user = decode;
                 next();
             }
         });
     } else {
-        req.status(401).send({ message: 'no token' });
+        res.status(401).send({ message: 'no token' });
     }
 };
