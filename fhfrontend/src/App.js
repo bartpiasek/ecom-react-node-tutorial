@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { BrowserRouter, Link, Route } from 'react-router-dom';
-import Order from '../../fhbackend/models/orderModel.js';
 import { signout } from './actions/userAction.js';
 import CartScreen from './screens/cartScreen.js';
 import HomeScreen from './screens/HomeScreen.js';
