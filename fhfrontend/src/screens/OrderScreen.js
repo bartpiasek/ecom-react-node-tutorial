@@ -38,6 +38,11 @@ export default function OrderScreen(props) {
                                     {order.shippingAddress.postalCode}, 
                                     {order.shippingAddress.country}
                                 </p>
+                                {order.isDelivered? (
+                                    <MessageBox variant="success">Dostarczono w {order.deliveredAt}
+                                    </MessageBox>)
+                                : (<MessageBox variant="danger"> Nie dostarczony</MessageBox>
+                                )}
                             </div>
                         </li>
 
@@ -48,34 +53,17 @@ export default function OrderScreen(props) {
                                     <strong>Sposób płatności:</strong> 
                                     {order.paymentMethod} <br />
                                 </p>
+                                {order.isPaid? (
+                                    <MessageBox variant="success">Opłacone w {order.paidAt}
+                                    </MessageBox>)
+                                : (<MessageBox variant="danger"> Nie opłacone</MessageBox>
+                                )}
                             </div>
                         </li>
 
                         <li>
                             <div className="card card-body">
                                 <h2>Produkty</h2>
-                                <ul>
-                                    {order.cartItems.map((item) => (
-                                        <li key={item.product}>
-                                            <div className="row">
-                                                <div>
-                                                    <img 
-                                                    src={item.image} 
-                                                    alt={item.name}
-                                                    className="small"
-                                                ></img>
-                                                </div>
-                                                <div className="min-30">
-                                                    <Link to={`/product/${item.product}`}>{item.name}</Link>
-                                                </div>
-                                                <div>
-                                                    {item.qty} x
-                                                    PLN {item.price} = PLN {item.qty * item.price}
-                                                </div>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
                             </div>
                         </li>
                     </ul>
