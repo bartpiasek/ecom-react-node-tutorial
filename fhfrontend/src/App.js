@@ -5,6 +5,7 @@ import Order from '../../fhbackend/models/orderModel.js';
 import { signout } from './actions/userAction.js';
 import CartScreen from './screens/cartScreen.js';
 import HomeScreen from './screens/HomeScreen.js';
+import OrderHistoryScreen from './screens/orderHistoryScreen.js';
 import OrderScreen from './screens/OrderScreen.js';
 import PaymentMethodScreen from './screens/paymentMethodScreen.js';
 import PlaceOrderScreen from './screens/placeOrderScreen.js';
@@ -53,6 +54,9 @@ function App() {
                         Wyloguj
                       </Link>
                     </li>
+                    <li>
+                      <Link to="/orderhistory">Historia zamówień</Link>
+                    </li>
                   </ul>
                 </div>
               ) : (
@@ -70,7 +74,7 @@ function App() {
           <Route path="/payment" component={PaymentMethodScreen}></Route>
           <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/order/:id" component={OrderScreen}></Route>
-
+          <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
           <Route path="/" component={HomeScreen}></Route>
         </main>
         <footer className="row center">All right reserved</footer>
