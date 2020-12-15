@@ -63,6 +63,27 @@ function App() {
                 <Link to="/signin">Zaloguj</Link>
               )
             }
+            { userInfo && userInfo.isAdmin && (
+              <div className="dropdtown">
+                <Link to="#admin">
+                  Admin<i className="fa fa-caret-down"></i>
+                </Link>
+                <ul className="droptown-content">
+                  <li>
+                    <Link to="/dashboard">Dashboard</Link>
+                  </li>
+                  <li>
+                    <Link to="/products">Produkty</Link>
+                  </li>
+                  <li>
+                    <Link to="/orderlist">Zamówienia</Link>
+                  </li>
+                  <li>
+                    <Link to="/userlist">Uzytkownicy</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </header>
         <main>
@@ -75,6 +96,7 @@ function App() {
           <Route path="/placeorder" component={PlaceOrderScreen}></Route>
           <Route path="/order/:id" component={OrderScreen}></Route>
           <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
+          {/* <PrivateRoute path="/profile" component={ProfileScreen}></PrivateRoute> */}
           <Route path="/" component={HomeScreen}></Route>
         </main>
         <footer className="row center">All right reserved</footer>
